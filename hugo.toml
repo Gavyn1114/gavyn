@@ -1,0 +1,46 @@
+baseURL = 'https://example.org/'
+locale = 'en-us'
+title = 'gavyn wong'
+theme = "etch"
+
+[params]
+  math = true
+  mainSections = ["posts"]
+  copyright = "Copyright © 2026 Gavyn Wong"
+
+# --- Navigation Menu ---
+[menu]
+  [[menu.main]]
+    identifier = "posts"
+    name = "posts"
+    url = "/posts/"
+    weight = 10
+
+  [[menu.main]]
+    identifier = "about"
+    name = "about"
+    url = "/about/"
+    weight = 20
+
+  [[menu.main]]
+    identifier = "resources"
+    name = "resources"
+    url = "/resources/"
+    weight = 30
+
+# --- Markup / Markdown Settings ---
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+    [markup.goldmark.parser.attribute]
+      block = true
+      title = true
+      link = true
+
+    [markup.goldmark.extensions.passthrough]
+      enable = true
+      [markup.goldmark.extensions.passthrough.delimiters]
+        block = [['\[', '\]'], ['$$', '$$']]
+        inline = [['\(', '\)']]

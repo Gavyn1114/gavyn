@@ -1,0 +1,11 @@
+<a href="{{ .Destination | safeURL }}"
+  {{- with .Title }} title="{{ . }}"{{ end -}}
+  {{- /* Automatically add target="_blank" to external links or PDFs */ -}}
+  {{- if or (strings.HasPrefix .Destination "http") (strings.HasSuffix .Destination ".pdf") }} target="_blank" rel="noopener noreferrer"{{ end -}}
+  {{- range $k, $v := .Attributes }}
+    {{- if not (eq $k "href") }}
+      {{- printf " %s=%q" $k $v | safeHTMLAttr -}}
+    {{- end -}}
+  {{- end -}}>
+  {{ .Text | safeHTML }}
+</a>
