@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on gavyn wong</title>
+    <link>http://localhost:1313/tags/</link>
+    <description>Recent content in Tags on gavyn wong</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+    <item>
+      <title>All UCL Maths Year 1 Modules Ranked</title>
+      <link>http://localhost:1313/posts/ucl-maths-year-1-ranked/</link>
+      <pubDate>Sun, 28 Jun 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/ucl-maths-year-1-ranked/</guid>
+      <description>&lt;h3 id=&#34;the-epsilon-delta-definition-of-a-limit&#34;&gt;The \(\epsilon\)-\(\delta\) Definition of a Limit&lt;/h3&gt;
+&lt;p&gt;One of the foundational concepts in real analysis is the formal definition of a limit. We say that the limit of a function \(f(x)\) as \(x\) approaches \(c\) is \(L\), written as:&lt;/p&gt;
+</description>
+    </item>
+    
+    
+    
+    
+    
+    
+    
+    
+  </channel>
+</rss>
