@@ -9,7 +9,7 @@ I've just completed my first year at UCL studying Mathematics, and am quite plea
 
 I thought it'd be nice to reflect a bit on the modules, so I'll be going through each module one by one, and putting them into a tier.
 
-This post is intendef for anyone interested in pursuing undergraduate mathematics, perhaps at UCL, or anyone with a university-level mathematics background.
+This post is intended for anyone interested in pursuing undergraduate mathematics, perhaps at UCL, or anyone with a university-level mathematics background.
 
 ### MATH0005 Algebra 1
 #### Module content
