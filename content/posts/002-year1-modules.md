@@ -2,9 +2,9 @@
 date = '2026-06-28'
 draft = false
 title = 'All UCL Maths Year 1 Modules Ranked'
-slug = "ucl-maths-year-1-ranked"
+slug = "first-year"
 +++
-
+DRAFT.
 I've just completed my first year at UCL studying Mathematics, and am quite pleased to be averaging a 91% :D
 
 I thought it'd be nice to reflect a bit on the modules, so I'll be going through each module one by one, and putting them into a tier.
@@ -28,7 +28,57 @@ The exam largely focused on computing things, where you can already secure most 
 
 It seemed like there was a large burden of proofs initially, but it turned out that we did not need to learn 90% of the proofs to the theorems we learned in lectures, which I appreciated to a certain extent.
 
-#### Tier and explanation
-B tier. I thought it was a nice, standard intro to linear algebra.
+Overall B tier. I thought it was a nice, standard intro to linear algebra.
 
 
+### MATH0003 Analysis 1
+#### Module content and thoughts
+This module is really the bread and butter of university mathematics, serving as an introduction to one of the most fundamental and well-developed field of mathematics known as Analysis. Easily one of my favourite year 1 modules so I'll start by saying it goes straight into S tier.
+
+The module starts with only the basic properties of real numbers and provides rigorous proofs for some main results in elementary calculus. This module is divided into four chapters.
+
+Chapter 1: Real numbers. This chapter introduces a lot of basic tools and definitions that will be used later on in the course - triangle inequality, the notion of boundedness, supremum, infimum, maximum, minimum, and the binomial theorem.
+
+Chapter 2: Sequences. One big thing analysts are concerned about is taming infinity. This chapter is concerned with the study of infinite sequences. Consider the sequence defined by \(x_n = 1/2^n\). Looking at the first few terms of the sequence, we have 1/2, 1/4, 1/8, 1/16, ... Well clearly, this sequence is "converging" towards zero, but how can we prove it? This motivates the formal definition of convergence:
+
+A sequence \(x_n\) converges to a limit \(L\) in \(\mathbb{R}\) if for every \(\varepsilon > 0\), there exists \(N\) in \(\mathbb{N}\) such that for all \(n \geq N\), \(|x_n - L| < \varepsilon\).
+
+which is perhaps the most important definition in all of Analysis.
+
+Also in this chapter: algebra of limits for sequences, sandwich theorem (aka squeeze theorem, two policemen theorem, ...), divergence, monotone convergence theorem.
+
+write stuff on subsequences? Which turns out to be a really important idea (Bolzano-Weistrass)
+
+
+### MATH0004 Analysis 2
+#### Module content and thoughts
+A natural followup to Analysis 1, with the objective to develop a rigourous theory of integration.
+
+S tier, fantastic module.
+
+### MATH0006 Algebra 2
+#### Module content and thoughts
+S tier again. An introduction to abstract algebra. Really cool seeing how through abstraction, many mathematical operations are structually the "same" in some sense.
+
+Best exam performance of mine here, scored 98/100 on this one. The lecturer is a really generous exam setter, could have set a really really diffcult exam given the nature of the module.
+
+### MATH0008 Applied Mathematics
+#### Module content and thoughts
+B tier. The content is reasonably interesting but not my style of maths. The lecturer is a really harsh exam setter.
+
+### MATH0009 Newtonian Mechanics
+#### Module content and thoughts
+C tier. Again, not really my style of maths. This module is kind of like A-level mechanics but in 3D, so lots and lots of vectors. Some pretty interesting stuff though, like the study of orbital motion, and studying the motion of objects on a surface of revolution.
+
+### MATH0010 Mathematical Methods 1
+#### Module content and thoughts
+A very scattershot module mainly serving as a review of A-level maths content, so not that interesting.
+C tier.
+
+### MATH0010 Mathematical Methods 2
+#### Module content and thoughts
+C tier. This module is split into two distinct halves.
+
+The first half is introductory Python, assuming no prior programming knowledge, so a bit dull. I really enjoy computational mathematics though, so I am really looking forward to the computational modules in Y2/3 though like Computational Methods, Numerical methods, and Combinatorial Optimisation.
+
+The second half was an introduction to vector calculus, and introduces a bunch of fundamental theorems in calculus like Green's Theorem, Stoke's Theorem and the Gauss divergence theorem. Somewhat cool but not really my taste.
