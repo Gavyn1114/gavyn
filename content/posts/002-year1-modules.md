@@ -68,7 +68,24 @@ B tier. The content is reasonably interesting but not my style of maths. The lec
 
 ### MATH0009 Newtonian Mechanics
 #### Module content and thoughts
-C tier. Again, not really my style of maths. This module is kind of like A-level mechanics but in 3D, so lots and lots of vectors. Some pretty interesting stuff though, like the study of orbital motion, and studying the motion of objects on a surface of revolution.
+This module is about particle dynamics, extending ideas developed in A-Level Mechanics to 3D. Two key themes in this module: 1 - developing useful coordinate systems such as intrinsic coordinates, plane polar coordinates, and cylindrical polar coordinates. 2 - Using vector calculus and solving differential equations.
+
+There are quite a few interesting problems and ideas tackled in the course. Stuff like particles sliding on a wire (calculating the motion with intrinsic coordinates), orbital motion (Kepler's laws of planetary motion, calculating the trajectory of meteorites), and rocket propulsion (systems where mass is changing).
+
+Figure 1: Gravity of Earth affecting a meteorite's trajectory.
+![Gravity of Earth affecting a meteorite's trajectory.](/images/gravity_affecting_meteorite.png "Coordinate systems used in this module")
+Figure 2: Rocket losing mass
+
+
+However, what I didn't like about this module is that I personally found that learning about the coordinate systems were kind of dull, and a decent amount of content in this module was just learning about unmotivated algebraic tricks.
+
+B tier.
+
+Advice for those taking the module:
+- Think about the situations presented in the problems physically to check if your solutions make sense.
+- Lots of formulas in this module that you want to ensure you can derive quickly.
+- When in doubt, dot with the velocity vector \(\dot{r}\)
+
 
 ### MATH0010 Mathematical Methods 1
 #### Module content and thoughts
