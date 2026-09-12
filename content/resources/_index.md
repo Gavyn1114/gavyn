@@ -7,6 +7,9 @@ title: "Resources"
 **[Great Wikipedia articles](/resources/best-of-wiki/)**  
 A collection of great Wikipedia articles.
 
+**[Olympiad math lecture notes on invariants and monovariants](/documents/invariants_and_monovariants.pdf)**  
+In July 2026, I was a guest speaker for <a href="https://gymome.com/">Gym OME</a>, a math olympiad camp based in Spain.
+
 ---
 
 I have not set up the below yet.
