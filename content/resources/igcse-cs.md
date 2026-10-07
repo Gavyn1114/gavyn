@@ -17,12 +17,14 @@ I strongly recommend using [Anki](https://apps.ankiweb.net/) to memorise all the
 This section will continue to expand, hopefully with all units added before the Summer 2027 exams.
 * [3.1 Computer architecture](/documents/3.1-computer-architecture-question-bank-public.pdf) [new!]
 * [3.3 Data storage](/documents/3.3-data-storage-question-bank-public.pdf)
+* [4.1 Types of softwares and interrupts](/documents/4.1-types-of-software-and-interrupts-question-bank-public.pdf)
 * [5.3 Cyber security](/documents/5.3-cyber-security-question-bank-public.pdf)
 
 Some more advice:
 - I don't think using these question banks is the best substitute for learning the content. Use the textbooks, and other resources to properly immerse yourself in the course content first.
-- There are often more marking points than marks available in a question. I suggest memorising more marking points than marks available to be safe. Also, not all the marking points make an equal amount of sense. Memorise what makes sense to you.
+- There are often more marking points than marks available in a question. I suggest memorising more marking points than marks available to be safe. Also, not all the marking points make an equal amount of sense (and some are even nonsensical in my opinion). Memorise what makes sense to you.
 - Some questions appear once every 5 years, some appear every other examination cycle. Perhaps you may encounter one question per exam that has never appeared before. Towards the end of the course, I suggest opening up several past papers to spot which topics are most common. Some examples of common topics: Converting between different units, describing lossless/lossy compression, describing packet switching... Some examples of uncommon topics: Digital currency, some types of cyber security threats...
+- If you start studying the course from 2027 onwards, note that these are question banks for the **previous** version of the syllabus. Much of the material is still relevant though. For more information, you can consult your teacher.
 
 [The official syllabus (PDF)](/documents/syllabus.pdf)
 
