@@ -20,7 +20,7 @@ This section will continue to expand, hopefully with all units added before the 
 * [5.3 Cyber security](/documents/5.3-cyber-security-question-bank-public.pdf)
 
 Some more advice:
-- I don't think using these question banks is not the best substitute for learning the content. Use the textbooks, and other resources to properly immerse yourself in the course content first.
+- I don't think using these question banks is the best substitute for learning the content. Use the textbooks, and other resources to properly immerse yourself in the course content first.
 - There are often more marking points than marks available in a question. I suggest memorising more marking points than marks available to be safe. Also, not all the marking points make an equal amount of sense. Memorise what makes sense to you.
 - Some questions appear once every 5 years, some appear every other examination cycle. Perhaps you may encounter one question per exam that has never appeared before. Towards the end of the course, I suggest opening up several past papers to spot which topics are most common. Some examples of common topics: Converting between different units, describing lossless/lossy compression, describing packet switching... Some examples of uncommon topics: Digital currency, some types of cyber security threats...
 
