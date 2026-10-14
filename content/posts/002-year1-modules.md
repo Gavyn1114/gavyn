@@ -204,6 +204,8 @@ I don't think I fully understood the module by the end of it, but I was good at 
 ### Final thoughts
 Overall, I really enjoyed the mathematical content in the first year of this course. I am very much looking forward to the second year modules, in particular Analysis 4, which is all about metric spaces, and Computational Methods, which is about writing algorithms to solve complex math problems.
 
+Thanks for reading :)
+
 [^1]: Whenever I say A-level, I mean A-level or any equivalent curriculum like the IB.
 [^2]: I was born a bit over 18 years ago.
 [^potato]: Answer: This is because differentiability on \((a,b)\) only implies continuity on \((a,b)\) and says nothing about continuity at \(a\) or \(b\).
