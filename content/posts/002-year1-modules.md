@@ -92,25 +92,35 @@ Advice and thoughts for those taking this module (on top of the advice given for
 - Don't gamble on proofs. The sheer number of proofs in this module makes it tempting to skip learning a few of them (and some took me a long time to nail down). But they are the easiest marks to get and a tragedy to lose. Some proofs in this module can be worth so many marks. For example, the proof for Cauchy's General Principle of Convergence was worth 17 marks on one particular exam.
 
 ### MATH0005 Algebra 1
-**Work in progress.**
+This course is an introduction to linear algebra, the study of vectors, matrices, and linear systems. I think this module is the one I have the hardest time explaining it in intuitive terms to those without a Mathematics background, as the ideas feel very abstract. I'll place this one in **B tier**, more reasoning for that to follow.
 
-**Draft.**
-This course is an introduction to linear algebra, extending the basic matrix and vector concepts introduced in A-Level. I think this module is the one I have the hardest time explaining it in intuitive terms to those without a Mathematics background, as the ideas feel very abstract.
+I'll list out some main topics and briefly explain some of them.
+- An introduction to what matrices are, which are simply a rectangular grid where you can store numbers in them. Lots of operations are defined on them, for example what it means to add matrices together, multiply a matrix by a number, multiply two matrices together, transpose a matrix, invert a matrix etc.
+- Subspaces and dimension. This is where the module gets really abstract, and I personally found this section really interesting! You learn about subspaces (special subsets of \(\mathbb{R}^n\) where \(\mathbb{R}^n\) denotes the set of all column vectors of length n), spans, linear independence, bases, and dimension, and all of these actually feel very natural and intuitive after some time.
+- Eigenvectors, diagonalisation, and determinants. Eigenvectors are special vectors that do not change direction when multiplied by a matrix. Seems random to care about them, but they seem to be helpful in understanding the effects of a complicated matrix transformation, and in understanding dynamical systems, systemes where some quantity evolves over time (and in fact, dynamical systems are covered in MATH0008 Applied Mathematics and the ideas of eigenvectors are implicitly used there).
+- Orthogonality and the Gram-Schmidt procedure.
 
-I HATE ROW REDUCTION. B tier.
+Advice/further thoughts for those taking the module:
+- Initially I found this module extremely difficult as I thought 1. it was so incredibly abstract 2. the proofs were really complicated. It got easier over the term as 1. I gradually warmed up to the level of abstraction in the course and sort of got the "essence" of linear algebra (by the way, <a href="https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab">great video series by 3blue1brown on the "Essence of linear algebra") </a> and 2. many (and almost all) proofs presented in lectures aren't examinable, which I found quite strange. The lecturer has kindly marked most proofs as non-examinable, which made things a lot easier.
+- A lot of the module's focus is on applying algorithms and doing computations, that it feels a lot like a "methods" course. Soooo much time is spent on doing row reductions (as lots of algorithms in the course boil down to row reduction), and they're very annoying as well, because it's very easy to make a small arithmetic slip on those and lose a couple (or all!) marks. You probably row reduce five times in an exam so make sure you're really confident with the process.
+- Resultingly, I found a good chunk of the module boring because of that, hence the placement in B tier, but it does contain lots of interesting/abstract ideas!!
 
-### MATH0006 Algebra 2
-**Work in progress.**
-
-**Draft.**
+### MATH0006 Algebra 2 
 An introduction to abstract algebra, the study of algebraic structures, the study of symmetry. The module is about zooming out and looking at the underlying structure of many mathematical operations and how they're really the same under a certain lens. Another fantastic module imo, **S tier**.
 
 The main topics:
 1. Basic number theory and permutations. Primes, divisors, Euclid's algorithm (an efficient way to compute the GCD of two integers), modular arithmetic. Just a warmup to the course, nothing too exciting.
+2. Groups. This is where the module takes off! A group is one of the most fundamental objects in all of abstract algebra:
+<div style="border-left: 4px solid #6ba3de; background: #eef4fc; padding: 1rem 1.25rem; margin: 1.5rem 0; border-radius: 4px;"> <strong>Definition (Group)</strong><br> A group is a set \(G\) together with a binary operation \(\star: G \times G \to G\) satisfying three axioms: <br> 1. Associativity: \((a \star b) \star c = a \star (b \star c)\) for all \(a, b, c \in G\). <br> 2. Identity: there exists an element \(e \in G\) such that \(e \star a = a \star e = a\) for all \(a \in G\). <br> 3. Inverses: for every \(a \in G\), there exists \(a^{-1} \in G\) such that \(a \star a^{-1} = a^{-1} \star a = e\). </div> It doesn't seem to be a particularly useful definition at first glance, but many mathematical structures (some very familiar from basic primary school maths) turn out to be groups, like the integers under addition, the non-zero rationals under multiplication, matrix multiplication (as long as the matrix is "invertible") etc.
+3. Rings. Rings build upon groups, now requiring two operations on a set instead of one.
+<div style="border-left: 4px solid #6ba3de; background: #eef4fc; padding: 1rem 1.25rem; margin: 1.5rem 0; border-radius: 4px;"> <strong>Definition (Ring)</strong><br> A ring is a set \(R\) with two operations \(+\) and \(\times\) such that: <br> 1. \((R, +)\) is an abelian group. <br> 2. Multiplication is associative, commutative, and has an identity. <br> 3. The distributive law holds: \(a \times (b + c) = a \times b + a \times c\). </div> In simple termms, it is any structure where you can sensibly perform addition, substraction, and multiplication, such as in the real numbers \(\mathbb{R}\) and the rationals \(\mathbb{Q}\). Natural numbers \(\mathbb{N}\), however, are not rings, because you can possibly do substraction and escape the set (e.g. 1-2 = -1). The ring we are interested in most is the set of all polynomials with real coeffcients \(R[x]\), and there are many interesting properties that can be studied about them but more on that is in the Year 2 module MATH0053 Algebra 4: Groups and Rings.
+4. Vector spaces.
+**reminder to self to finish this section**
 
-Further thoughts on the module:
+Advice/further thoughts for those taking the module:
 - Everyone's favourite lecturer out of the Year 1 lecturers, props to Ed Segal.
-- Best exam performance of mine here, scored 98/100 on this one. The lecturer is a really generous exam setter, could have set a really really diffcult exam given the nature of the module. 
+- Best exam performance of mine here, scored 98/100 on this one. The lecturer is a really generous exam setter, could have set a really really diffcult exam given the nature of the module.
+**reminder to self to finish this section**
 
 ### MATH0008 Applied Mathematics
 This module is about modelling some real world phenomena. There are two distinct chunks to this module. The first half is about modelling population dynamics using difference and differential equations. The second half is about classical mechanicals: forces, oscillations, collisions, and the wave equation.
@@ -141,7 +151,7 @@ Like with MATH0008 Applied Maths, here are quite a few interesting problems and 
 ![Rocket losing mass.](/images/rocket_losing_mass.png)
 <figcaption style="text-align: center;">Figure: Rocket losing mass.</figcaption>
 
-I liked this module enough, so I'll place it in **B tier**. I personally found that learning about the coordinate systems was kind of dull, and the problem-solving tended to rely on too many unmotivated algebraic tricks rather than physical intuition.
+I did find the module content reasonably interesting and the lecturer was extremely enthusiastic, so I'll place it in **A tier**. I personally found that learning about the coordinate systems was kind of dull, and the problem-solving tended to rely on too many unmotivated algebraic tricks rather than physical intuition.
 
 Advice for those taking the module:
 - Check if your solutions make sense physically.
@@ -163,9 +173,9 @@ Here are the topics. Most are already seen in A-level Further Maths so I won't e
 
 Advice for those taking the module:
 - Don't be intimidated by the Einstein summation notation. Even if you don't completely understand what it is, just learn the identities. All you have to do is apply them mechanically in the exam.
-- Despite the module content being (relatively) easy, don't underestimate the exam, the lecturer has set some exams that I found quite tough relative to other modules.
+- Despite the module content being (relatively) easy, don't underestimate the exam, the lecturer has set some exams that I found quite tough relative to other modules. Also note that the lecturer has changed after my year.
 - Make sure you're familiar with all the content in the module, especially the nicher parts like t-sub, improper integrals.
-- It's not worthwhile to spend the time to do the computation for every single past exam question for both Methods 1 and 2. They take such a long time and don't really aid understanding either. Just make sure you know how to set up the methods.
+- When doing practice questions, it's not worthwhile to spend the time to do the computation for every single past exam question for both Methods 1 and 2. They take such a long time and don't really aid understanding either. Just make sure you know how to execute the methods.
 
 ### MATH0011 Mathematical Methods 2
 This module is split into two distinct halves.
@@ -188,7 +198,7 @@ The second half continues the study of multivariable calculus. Some topics inclu
 There are some interesting concepts here and there, but overall I didn't really enjoy the module that much. It did not answer any questions I found particularly interesting. Also, answering coursework and exam questions for this module was for the most part, annoying, as the computations are really really long. Like Methods 1, although for different reasons, I'll put this one in **C tier**.
 
 Further thoughts/advice for those taking the module: </br>
-I don't think I fully understood the module by the end of it, but I was good at looking at a question and knowing exactly what kind of computation I was being asked to do. Even though the module is conceptually harder than Methods 1, most exam questions just ask you to perform long computations without having to think about anything too deeply, so it is definitely relatively easier to score higher marks on this module.
+I don't think I fully understood the module by the end of it, but I was good at looking at a question and knowing exactly what kind of computation I was being asked to do. Even though the module is conceptually harder than Methods 1, most exam questions just ask you to perform long computations without having to think about anything too deeply, so it is definitely relatively easier to score higher marks on this module (although the lecturer can choose to set deeper questions, and perhaps they will, given the lecturer is changing after my year).
 
 [^1]: Whenever I say A-level, I mean A-level or any equivalent curriculum like the IB.
 [^2]: I was born a bit over 18 years ago.
