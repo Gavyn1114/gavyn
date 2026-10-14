@@ -1,21 +1,18 @@
 ---
-title: "IGCSE Computer Science Notes"
+title: "IGCSE Computer Science Question Banks"
 ---
 
 🚧 Under construction. 🚧
 
-Below are my notes for Cambridge's IGCSE Computer Science 0478 (for assessment from 2023 onwards, with last assessment in 2028).
-
-#### Notes
-To be added.
+Below are my question banks sorted by topic for Cambridge's IGCSE Computer Science 0478 (for assessment from 2023 onwards, with last assessment in 2028).
 
 #### Question banks
-I strongly believe that scoring 60+ out of 75 is very easy on the Paper 1, as it is mostly just rote memorisation. There is very little variation in the possible questions that can come up on Paper 1. As long as you have 'memorised' (although I would prefer using the word 'understood', as understanding is the best way to memorise) all the mark schemes in the question banks attached below, it is more than sufficient to score at an A* level.
+I strongly believe that scoring at least ~60 out of 75 is very easy on the Paper 1, as it is mostly just rote memorisation. There is very little variation in the possible questions that can come up on Paper 1. As long as you have 'memorised' (although I would prefer using the word 'understood', as understanding is the best path to memorisation) all the mark schemes in the question banks attached below, it is more than sufficient to score at an A* level.
 
 I strongly recommend using [Anki](https://apps.ankiweb.net/) to memorise all the content.
 
 This section will continue to expand, hopefully with all units added before the Summer 2027 exams.
-* [3.1 Computer architecture](/documents/3.1-computer-architecture-question-bank-public.pdf) [new!]
+* [3.1 Computer architecture](/documents/3.1-computer-architecture-question-bank-public.pdf)
 * [3.3 Data storage](/documents/3.3-data-storage-question-bank-public.pdf)
 * [4.1 Types of softwares and interrupts](/documents/4.1-types-of-software-and-interrupts-question-bank-public.pdf)
 * [5.3 Cyber security](/documents/5.3-cyber-security-question-bank-public.pdf)

@@ -59,7 +59,7 @@ This module is a natural follow-up to Analysis 1, with the objective of developi
 
 A rough breakdown what the module covers:
 
-1. Cauchy sequences and uniform continuity. On its own, not a very interesting chapter, and is intended just as a warmup. However, Cauchy sequences in particular, sequences that get "really close" to each other as they progress, turn out to be very important in further mathematics. Formally:
+1. Cauchy sequences and uniform continuity. On its own, not a very interesting chapter, and is intended just as a warmup. However, Cauchy sequences in particular, sequences that get "close" to each other as they progress, turn out to be very important in further mathematics. Formally:
 <div style="border-left: 4px solid #6ba3de; background: #eef4fc; padding: 1rem 1.25rem; margin: 1.5rem 0; border-radius: 4px;">
 <strong>Definition (Cauchy sequence)</strong><br>
 A sequence \(x_n\) is Cauchy if for every \(\varepsilon > 0\), there exists \(N \in \mathbb{N}\) such that for all \(m, n > N\), \(|x_m - x_n| < \varepsilon\).
@@ -80,27 +80,27 @@ A sequence \(x_n\) is Cauchy if for every \(\varepsilon > 0\), there exists \(N 
 \(\int_1^{\infty} \frac{1}{x^2} \, dx\) &nbsp; &nbsp; &nbsp;\(\int_{-\infty}^{\infty} e^{-x^2} dx\) &nbsp; &nbsp; &nbsp;\(\int_0^{\infty} \frac{\sin x}{x} \, dx\)
 </div> 
 
-Overall, I really enjoyed this module, gaining a really deep intuition of all the things informally examined at A-level.
+Overall, I really enjoyed this module, and felt that I gained a deep intuition of all the things informally examined at A-level.
 
 Advice and thoughts for those taking this module (on top of the advice given for Analysis 1):
-- The heaviest module of first year. The lecturer has said this is the module with the lowest averages across all first-year modules.
+- The heaviest module of first year. The lecturer has said this is the module with the lowest averages across all first-year modules (though personally I doubt this).
 - The lecturer has kindly made typed lecture notes available (unlike the Analysis 1 lecturer), which is a great refernece to check exactly what is and isn't examinable.
 - The lecturer has also made all past papers since 1997 available, which is amazing. The syllabus has not changed in the last 15 or so years, and the lecturer for this module has not changed since I was born[^2] so the exam style is fairly consistent.
 - In some sense, this is the easiest module to score 100% on, as 1. there is so much "bookwork" (reciting definitions, theorem statements, and proofs covered in lectures) on this exam and 2. there are barely any new questions, they are all recycled from prior years. Do the past papers!
 - When learning the lemmas/theorems for this module, I found that it is often the case that the proof kind of obscures the statement and is (counterintuitively) unhelpful for understanding why the lemma/theorem is true in the first place. For example, the proof for the Taylor theorem and L'Hopital (in my opinion) does not help you understand why they are true, as they rely on some gimmicky tricks. To that end...
 - When learning the lemmas/theorems for this module, I found it helpful to immediately find exam questions where they can be applied, which is helpful for understanding the statement itself.
-- Don't gamble on proofs. The sheer number of proofs in this module makes it tempting to skip learning a few of them (and some really took me a long time to nail down). But they are the easiest marks to get and a tragedy to lose. Some proofs in this module can be worth so many marks. For example, the proof for Cauchy's General Principle of Convergence was worth 17 marks on one particular exam.
+- Don't gamble on proofs. The sheer number of proofs in this module makes it tempting to skip learning a few of them (and some took me a long time to nail down). But they are the easiest marks to get and a tragedy to lose. Some proofs in this module can be worth so many marks. For example, the proof for Cauchy's General Principle of Convergence was worth 17 marks on one particular exam.
 
 ### MATH0005 Algebra 1
-Work in progress.
+**Work in progress.**
 
 **Draft.**
 This course is an introduction to linear algebra, extending the basic matrix and vector concepts introduced in A-Level. I think this module is the one I have the hardest time explaining it in intuitive terms to those without a Mathematics background, as the ideas feel very abstract.
 
-I HATE ROW REDUCTION.
+I HATE ROW REDUCTION. B tier.
 
 ### MATH0006 Algebra 2
-Work in progress.
+**Work in progress.**
 
 **Draft.**
 An introduction to abstract algebra, the study of algebraic structures, the study of symmetry. The module is about zooming out and looking at the underlying structure of many mathematical operations and how they're really the same under a certain lens. Another fantastic module imo, **S tier**.
@@ -151,7 +151,7 @@ Advice for those taking the module:
 ### MATH0010 Mathematical Methods 1
 A module that aims to bring everyone coming from a range of different syllabi up to speed on a range of basic topics: vectors, complex numbers, univariate and multivariate calculus, and differential equations.
 
-There isn't that much to this module imo. It's well delivered and does its job of easing everyone into university mathematics, but it's not really deeply interesting, so I'll put it in **C tier**.
+There isn't that much to this module imo. It's well delivered and does its job of easing everyone into university mathematics, but it's not anything deep, so I'll put it in **C tier**.
 
 Here are the topics. Most are already seen in A-level Further Maths so I won't elaborate much.
 1. Vectors. Scalar and vector products, equations of lines and planes, and one of the most challenging topics in the course: Einstein summation notation. It's a way of writing vector expressions that can sometimes be more useful. For example, the cross product can be rewritten as \((\mathbf{a} \times \mathbf{b})_i = \epsilon_{ijk} a_j b_k\).
