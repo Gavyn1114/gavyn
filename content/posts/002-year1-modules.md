@@ -20,19 +20,21 @@ Here is a rough breakdown of the main topics of the course:
 
 2. Sequences. This chapter is concerned with the study of infinite sequences. Consider the sequence defined by \(x_n = 1/2^n\). Looking at the first few terms of the sequence, we have \(1/2, 1/4, 1/8, 1/16, ...\) well, clearly, this sequence is "converging" towards zero, but what does that even mean? This motivates the formal definition of convergence, which is perhaps the most important definition in all of Analysis:
 
-<div style="border-left: 4px solid #6ba3de; background: #eef4fc; padding: 1rem 1.25rem; margin: 1.5rem 0; border-radius: 4px;">
-<strong>Definition (Convergence)</strong><br>
-A sequence \(x_n\) converges to a limit \(L \in \mathbb{R}\) if for every \(\varepsilon > 0\), there exists \(N \in \mathbb{N}\) such that for all \(n > N\), \(|x_n - L| < \varepsilon\).
-</div>
+   <div style="border-left: 4px solid #6ba3de; background: #eef4fc; padding: 1rem 1.25rem; margin: 1.5rem 0; border-radius: 4px;">
+   <strong>Definition (Convergence)</strong><br>
+   A sequence \(x_n\) converges to a limit \(L \in \mathbb{R}\) if for every \(\varepsilon > 0\), there exists \(N \in \mathbb{N}\) such that for all \(n > N\), \(|x_n - L| < \varepsilon\).
+   </div>
 
-3. Infinite series. It turns out, up to certain restrictions, it actually makes sense to sum an infinite sequence of values. For example,  the sum of \(1/2, 1/4, 1/8, 1/16, ...\) is "clearly" one (you can visualise this on a number line if you're not convinced). For a general infinite series, if it has a sum, we say the infinite series converges. See [here](https://en.wikipedia.org/wiki/Series_(mathematics)#Examples_of_numerical_series) if you'd like to see a short list of some interesting infinite series.
+3. Infinite series. It turns out, up to certain restrictions, it actually makes sense to sum an infinite sequence of values. For example, the sum of \(1/2, 1/4, 1/8, 1/16, ...\) is "clearly" one (you can visualise this on a number line if you're not convinced). For a general infinite series, if it has a sum, we say the infinite series converges. See [here](https://en.wikipedia.org/wiki/Series_(mathematics)#Examples_of_numerical_series) if you'd like to see a short list of some interesting infinite series.
 
 4. Limits of functions and continuity. If you were to explain what a continuous function means to a six-year-old, you'd tell them that it is a graph you can draw without lifting your hand off the paper. To formalise this very intuitive notion, you need the \(\varepsilon\text{-}\delta\) definition of continuity.
-<div style="border-left: 4px solid #6ba3de; background: #eef4fc; padding: 1rem 1.25rem; margin: 1.5rem 0; border-radius: 4px;">
-<strong>Definition (Continuity)</strong><br>
-A function \(f: D \to \mathbb{R}\) is continuous at a point \(c \in D\) if for every \(\varepsilon > 0\), there exists \(\delta > 0\) such that for all \(x \in D\), \(|x - c| < \delta \implies |f(x) - f(c)| < \varepsilon\).
-</div>
-The chapter culminates with a proof of the intermediate value theorem.
+
+   <div style="border-left: 4px solid #6ba3de; background: #eef4fc; padding: 1rem 1.25rem; margin: 1.5rem 0; border-radius: 4px;">
+   <strong>Definition (Continuity)</strong><br>
+   A function \(f: D \to \mathbb{R}\) is continuous at a point \(c \in D\) if for every \(\varepsilon > 0\), there exists \(\delta > 0\) such that for all \(x \in D\), \(|x - c| < \delta \implies |f(x) - f(c)| < \varepsilon\).
+   </div>
+
+   The chapter culminates with a proof of the intermediate value theorem.
 
 <img src="/images/IVT.png" alt="Intermediate Value Theorem" width="600" style="display: block; margin: 0 auto;">
 <figcaption style="text-align: center;">Figure: Intermediate Value Theorem</figcaption>
