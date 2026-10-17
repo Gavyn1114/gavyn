@@ -49,7 +49,7 @@ I don't think my enjoyment of this module is shared by the majority though. Appa
 
 Advice for those taking this module:
 - Learn the definitions and theorems precisely, including all the regularity assumptions (i.e. the assumptions that just ensure your mathematical object is "well behaved" enough). For example, for Rolle's Theorem or the Mean Value Theorem, you should always state that the function \(f\) is continuous on \([a, b]\) and differentiable on \((a, b)\).
-- Think deeply about the subtleties - what breaks if you drop a certain assumption/why are certain assumptions needed in the first place?  Continuing with the Rolle's Theorem/Mean Value Theorem example: why do we have to assume that \(f\) is continuous on \([a, b]\) AND differentiable on \((a, b)\) when another result in the module says that differentiability implies continuity?[^potato]
+- Think deeply about the subtleties - what breaks if you drop a certain assumption/why are certain assumptions needed in the first place?  Continuing with the Rolle's Theorem/Mean Value Theorem example: why do we have to assume that \(f\) is continuous on \([a, b]\) AND differentiable on \((a, b)\) when another result in the module says that differentiability implies continuity?[^3]
 - Learn all the tools at your disposal and a general idea of when you should apply them. For example, when proving that an infinite series converges, there are seven different tests you can apply. You should have several examples of series you can apply these tests to.
 - Collect a list of counterexamples. When you learn a new theorem, it is incredibly helpful to know examples of functions or sequences where the theorem fails because one condition isn't met. For example, a classic example of a continuous function that is not differentiable on \(\mathbb{R}\) is \(f(x) = |x|\). An example of an unbounded continuous function on \((0, \infty)\) is \(f(x) = 1/x\).
 - Be prepared for anything. The lecturer has set fairly routine, easy exams in the past but decided to step up the difficulty significantly in May 2026, and set a paper that I thought genuinely tested deep understanding.
@@ -60,10 +60,11 @@ This module is a natural follow-up to Analysis 1, with the objective of developi
 A rough breakdown of what the module covers:
 
 1. Cauchy sequences and uniform continuity. On its own, not a very interesting chapter, and is intended just as a warmup. However, Cauchy sequences in particular, sequences whose terms get "close" to each other as they progress, turn out to be very important in further mathematics. Formally:
-<div style="border-left: 4px solid #6ba3de; background: #eef4fc; padding: 1rem 1.25rem; margin: 1.5rem 0; border-radius: 4px;">
-<strong>Definition (Cauchy sequence)</strong><br>
-A sequence \(x_n\) is Cauchy if for every \(\varepsilon > 0\), there exists \(N \in \mathbb{N}\) such that for all \(m, n > N\), \(|x_m - x_n| < \varepsilon\).
-</div>
+
+   <div style="border-left: 4px solid #6ba3de; background: #eef4fc; padding: 1rem 1.25rem; margin: 1.5rem 0; border-radius: 4px;">
+   <strong>Definition (Cauchy sequence)</strong><br>
+   A sequence \(x_n\) is Cauchy if for every \(\varepsilon > 0\), there exists \(N \in \mathbb{N}\) such that for all \(m, n > N\), \(|x_m - x_n| < \varepsilon\).
+   </div>
 
 2. Riemann Integration. From the ground up, instead of loosely understanding integration as "area under the curve", the Riemann integral is formally defined using Upper and Lower Darboux sums. We see a proof of the Fundamental Theorem of Calculus, a theorem used a ton at high school without much justification for why it works. <br> <br> <img src="/images/FTC.png" alt="Fundamental Theorem of Calculus" width="600" style="display: block; margin: 0 auto;"> <figcaption style="text-align: center;">Figure: Fundamental Theorem of Calculus</figcaption> <br> Proofs are also given for other fundamental tools like integration by parts and integration by substitution, which is cool.
 
@@ -111,9 +112,17 @@ An introduction to abstract algebra, the study of algebraic structures, the stud
 The main topics:
 1. Basic number theory and permutations. Primes, divisors, Euclid's algorithm (an efficient way to compute the GCD of two integers), modular arithmetic. Just a warmup to the course, nothing too exciting.
 2. Groups. This is where the module takes off! A group is one of the most fundamental objects in all of abstract algebra:
-<div style="border-left: 4px solid #6ba3de; background: #eef4fc; padding: 1rem 1.25rem; margin: 1.5rem 0; border-radius: 4px;"> <strong>Definition (Group)</strong><br> A group is a set \(G\) together with a binary operation \(\star: G \times G \to G\) satisfying three axioms: <br> 1. Associativity: \((a \star b) \star c = a \star (b \star c)\) for all \(a, b, c \in G\). <br> 2. Identity: there exists an element \(e \in G\) such that \(e \star a = a \star e = a\) for all \(a \in G\). <br> 3. Inverses: for every \(a \in G\), there exists \(a^{-1} \in G\) such that \(a \star a^{-1} = a^{-1} \star a = e\). </div> It doesn't seem to be a particularly useful definition at first glance, but many mathematical structures (some very familiar from basic primary school maths) turn out to be groups, like the integers under addition, the non-zero rationals under multiplication, matrix multiplication (as long as the matrix is "invertible") etc.
+
+   <div style="border-left: 4px solid #6ba3de; background: #eef4fc; padding: 1rem 1.25rem; margin: 1.5rem 0; border-radius: 4px;"> <strong>Definition (Group)</strong><br> A group is a set \(G\) together with a binary operation \(\star: G \times G \to G\) satisfying three axioms: <br> 1. Associativity: \((a \star b) \star c = a \star (b \star c)\) for all \(a, b, c \in G\). <br> 2. Identity: there exists an element \(e \in G\) such that \(e \star a = a \star e = a\) for all \(a \in G\). <br> 3. Inverses: for every \(a \in G\), there exists \(a^{-1} \in G\) such that \(a \star a^{-1} = a^{-1} \star a = e\). </div>
+
+   It doesn't seem to be a particularly useful definition at first glance, but many mathematical structures (some very familiar from basic primary school maths) turn out to be groups, like the integers under addition, the non-zero rationals under multiplication, matrix multiplication (as long as the matrix is "invertible") etc. The power of the definition of a group is that once you prove a theorem about groups in general, it automatically holds for every one of these examples at once. For example, Lagrange’s theorem, a general fact about groups, gives you Fermat’s little theorem from number theory almost immediately.
+
 3. Rings. Rings build upon groups, now requiring two operations on a set instead of one.
-<div style="border-left: 4px solid #6ba3de; background: #eef4fc; padding: 1rem 1.25rem; margin: 1.5rem 0; border-radius: 4px;"> <strong>Definition (Ring)</strong><br> A ring is a set \(R\) with two operations \(+\) and \(\times\) such that: <br> 1. \((R, +)\) is an abelian group. <br> 2. Multiplication is associative, commutative, and has an identity. <br> 3. The distributive law holds: \(a \times (b + c) = a \times b + a \times c\). </div> In simple terms, it is any structure where you can sensibly perform addition, subtraction, and multiplication, such as in the real numbers \(\mathbb{R}\) and the rationals \(\mathbb{Q}\). Natural numbers \(\mathbb{N}\), however, are not rings, because you can do subtraction and possibly escape the set (e.g. \(1 - 2 = -1\)). The ring we are interested in most is the set of all polynomials with real coeffcients \(\mathbb{R}[x]\), and there are many interesting properties that can be studied about them but more on that is in the optional Year 2 module MATH0053 Algebra 4: Groups and Rings.
+
+   <div style="border-left: 4px solid #6ba3de; background: #eef4fc; padding: 1rem 1.25rem; margin: 1.5rem 0; border-radius: 4px;"> <strong>Definition (Ring)</strong><br> A ring is a set \(R\) with two operations \(+\) and \(\times\) such that: <br> 1. \((R, +)\) is an abelian group. <br> 2. Multiplication is associative, commutative, and has an identity. <br> 3. The distributive law holds: \(a \times (b + c) = a \times b + a \times c\). </div>
+
+   In simple terms, it is any structure where you can sensibly perform addition, subtraction, and multiplication, such as in the real numbers \(\mathbb{R}\) and the rationals \(\mathbb{Q}\). Natural numbers \(\mathbb{N}\), however, are not rings, because you can do subtraction and possibly escape the set (e.g. \(1 - 2 = -1\)). The ring we are interested in most is the set of all polynomials with real coefficients \(\mathbb{R}[x]\), and there are many interesting properties that can be studied about them but more on that is in the optional Year 2 module MATH0053 Algebra 4: Groups and Rings.
+
 4. Vector spaces. The final section revisits ideas from Algebra 1 in a more abstract setting. Instead of just working with column vectors \(\mathbb{R}^n\), it actually makes sense to treat many objects as vectors, whether it's polynomials, sequences, or even functions, they behave as vectors in a sense because adding and scalar multiplying polynomials/sequences/functions together behave exactly the same way as adding and scalar multiplying a usual column vector.
 
 Overall, I loved this module! I really liked the way it progressed, from basic number theory, then through groups, rings, and vector spaces.
@@ -208,4 +217,4 @@ Thanks for reading :)
 
 [^1]: Whenever I say A-level, I mean A-level or any equivalent curriculum like the IB.
 [^2]: I was born a bit over 18 years ago.
-[^potato]: Answer: This is because differentiability on \((a,b)\) only implies continuity on \((a,b)\) and says nothing about continuity at \(a\) or \(b\).
+[^3]: Answer: This is because differentiability on \((a,b)\) only implies continuity on \((a,b)\) and says nothing about continuity at \(a\) or \(b\).
