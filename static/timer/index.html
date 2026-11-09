@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>timer</title>
+<style>
+:root{--bg:#fff;--fg:#313a3d;--muted:#767676;--line:#dcdcdc;--accent:#00b1ed;--btn:#f4f4f4}
+@media (prefers-color-scheme:dark){:root{--bg:#121212;--fg:#ebebeb;--muted:#9a9a9a;--line:#333;--btn:#1e1e1e}}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16px;-webkit-font-smoothing:antialiased}
+body.done{animation:flash 1s ease-in-out infinite alternate}
+@keyframes flash{from{background:var(--bg)}to{background:color-mix(in srgb,var(--accent) 40%,var(--bg))}}
+a.home{color:var(--muted);text-decoration:none;font-size:14px;position:fixed;top:16px;left:16px}
+a.home:hover{text-decoration:underline}
+#time{font-size:min(26vw,160px);font-weight:300;letter-spacing:.02em;font-variant-numeric:tabular-nums;line-height:1;margin:0}
+#status{color:var(--muted);font-size:16px;min-height:1.6em;margin:14px 0 28px;text-align:center}
+.row{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+button{font:inherit;font-size:16px;padding:10px 24px;border:1px solid var(--line);border-radius:6px;background:var(--btn);color:var(--fg);cursor:pointer}
+button:hover:not(:disabled){border-color:var(--accent)}
+button:disabled{opacity:.35;cursor:default}
+button.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+#stats{display:flex;gap:24px;color:var(--muted);font-size:14px;margin-top:40px;flex-wrap:wrap;justify-content:center;font-variant-numeric:tabular-nums}
+#settings{position:fixed;bottom:16px;left:16px;right:16px;display:flex;gap:20px;flex-wrap:wrap;justify-content:center;align-items:center;color:var(--muted);font-size:14px}
+#settings label{display:flex;align-items:center;gap:8px}
+input[type=number]{font:inherit;font-size:14px;width:60px;padding:4px 6px;border:1px solid var(--line);border-radius:4px;background:var(--bg);color:var(--fg)}
+input[type=range]{accent-color:var(--accent);width:120px}
+#settings button{padding:4px 10px;font-size:13px}
+kbd{color:var(--muted);font-family:inherit}
+</style>
+</head>
+<body>
+<a class="home" href="/">← gavyn wong</a>
+<p id="time">60:00</p>
+<div id="status"></div>
+<div class="row">
+  <button id="start" class="primary">start</button>
+  <button id="pause">pause</button>
+  <button id="reset">reset</button>
+</div>
+<div id="stats">
+  <span id="count"></span>
+  <span id="paused"></span>
+  <span><kbd>space</kbd> = start / pause</span>
+</div>
+<div id="settings">
+  <label>minutes <input id="minutes" type="number" min="1" max="600" step="1"></label>
+  <label>volume <input id="volume" type="range" min="0" max="100"> <button id="test">test</button></label>
+</div>
+<script>
+(() => {
+  const $ = id => document.getElementById(id);
+  const STATE = 'timer-state', TODAY = 'timer-today', PREFS = 'timer-prefs';
+  const read = (k, d) => { try { return Object.assign(d, JSON.parse(localStorage.getItem(k) || '{}')); } catch (e) { return d; } };
+
+  const prefs = read(PREFS, { minutes: 60, volume: 30 });
+  const fresh = () => ({ status: 'idle', endAt: 0, remaining: prefs.minutes * 60000, pauseUsed: false, pausedTotal: 0, pauseStart: 0 });
+  let s = read(STATE, fresh());
+  if (s.status === 'idle') s.remaining = prefs.minutes * 60000;
+
+  let tick = null, chimeTimer = null, audio = null;
+  const save = () => localStorage.setItem(STATE, JSON.stringify(s));
+  const savePrefs = () => localStorage.setItem(PREFS, JSON.stringify(prefs));
+
+  const today = () => new Date().toDateString();
+  const getCount = () => { const t = read(TODAY, {}); return t.date === today() ? t.count : 0; };
+  const addCount = () => localStorage.setItem(TODAY, JSON.stringify({ date: today(), count: getCount() + 1 }));
+
+  const remaining = () => s.status === 'running' ? Math.max(0, s.endAt - Date.now()) : s.remaining;
+  const pausedTotal = () => s.pausedTotal + (s.status === 'paused' ? Date.now() - s.pauseStart : 0);
+  const fmt = ms => { const t = Math.ceil(ms / 1000); return String(Math.floor(t / 60)).padStart(2, '0') + ':' + String(t % 60).padStart(2, '0'); };
+
+  // sound: a soft three-note chime, synthesised so there's no audio file to load
+  function ctx() {
+    if (!audio) audio = new (window.AudioContext || window.webkitAudioContext)();
+    if (audio.state === 'suspended') audio.resume();
+    return audio;
+  }
+  function ding() {
+    const c = ctx(), t = c.currentTime, v = Math.pow(prefs.volume / 100, 1.5) * 0.6;
+    if (v <= 0) return;
+    [523.25, 659.25, 783.99].forEach((f, i) => {
+      const o = c.createOscillator(), g = c.createGain();
+      o.type = 'sine'; o.frequency.value = f;
+      g.gain.setValueAtTime(0, t + i * 0.18);
+      g.gain.linearRampToValueAtTime(v, t + i * 0.18 + 0.02);
+      g.gain.exponentialRampToValueAtTime(0.0001, t + i * 0.18 + 1.4);
+      o.connect(g).connect(c.destination);
+      o.start(t + i * 0.18); o.stop(t + i * 0.18 + 1.5);
+    });
+  }
+  function chime() { let n = 0; ding(); chimeTimer = setInterval(() => { if (++n >= 6) stopChime(); else ding(); }, 2500); }
+  function stopChime() { clearInterval(chimeTimer); chimeTimer = null; }
+
+  function render() {
+    const r = remaining(), active = s.status === 'running' || s.status === 'paused';
+    $('time').textContent = fmt(r);
+    document.title = active ? fmt(r) + (s.status === 'paused' ? ' (paused)' : '') : s.status === 'done' ? 'done!' : 'timer';
+    $('start').textContent = s.status === 'done' ? 'start next' : 'start';
+    $('start').disabled = active;
+    $('pause').textContent = s.status === 'paused' ? 'resume' : 'pause';
+    $('pause').disabled = !(s.status === 'paused' || (s.status === 'running' && !s.pauseUsed));
+    $('reset').disabled = s.status === 'idle';
+    $('status').textContent = { idle: '', running: s.pauseUsed ? 'pause used' : 'one pause available', paused: 'paused', done: 'session done. take a break, then start the next one.' }[s.status];
+    $('count').textContent = getCount() + ' done today';
+    $('paused').textContent = 'paused ' + fmt(pausedTotal());
+    $('minutes').disabled = active;
+    document.body.classList.toggle('done', s.status === 'done');
+  }
+
+  function loop() {
+    clearInterval(tick); tick = null;
+    if (s.status === 'running' && remaining() <= 0) return finish();
+    render();
+    if (s.status === 'running') tick = setInterval(() => remaining() <= 0 ? finish() : render(), 250);
+    else if (s.status === 'paused') tick = setInterval(render, 1000);
+  }
+
+  function start() {
+    if (s.status === 'running' || s.status === 'paused') return;
+    stopChime();
+    s = fresh(); s.status = 'running'; s.endAt = Date.now() + prefs.minutes * 60000;
+    save(); loop();
+  }
+  function pause() {
+    if (s.status === 'running' && !s.pauseUsed) {
+      s.remaining = remaining(); s.status = 'paused'; s.pauseStart = Date.now(); s.pauseUsed = true;
+    } else if (s.status === 'paused') {
+      s.pausedTotal += Date.now() - s.pauseStart; s.pauseStart = 0;
+      s.endAt = Date.now() + s.remaining; s.status = 'running';
+    } else return;
+    save(); loop();
+  }
+  function reset() {
+    if (s.status === 'idle') return;
+    if (s.status !== 'done' && !confirm("reset this session? it won't be counted.")) return;
+    stopChime(); s = fresh(); save(); loop();
+  }
+  function finish() {
+    clearInterval(tick); tick = null;
+    s.status = 'done'; s.remaining = 0; addCount(); save();
+    render(); chime();
+  }
+
+  $('start').onclick = start;
+  $('pause').onclick = pause;
+  $('reset').onclick = reset;
+  $('test').onclick = ding;
+  $('minutes').value = prefs.minutes;
+  $('minutes').onchange = e => {
+    prefs.minutes = Math.min(600, Math.max(1, parseInt(e.target.value, 10) || 60));
+    e.target.value = prefs.minutes; savePrefs();
+    if (s.status !== 'running' && s.status !== 'paused') { s.remaining = prefs.minutes * 60000; render(); }
+  };
+  $('volume').value = prefs.volume;
+  $('volume').oninput = e => { prefs.volume = +e.target.value; savePrefs(); };
+  document.addEventListener('keydown', e => {
+    if (e.code !== 'Space' || e.target.tagName === 'INPUT') return;
+    e.preventDefault();
+    if (s.status === 'running' || s.status === 'paused') pause(); else start();
+  });
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) loop(); });
+  window.addEventListener('storage', e => { if (e.key === STATE) { s = read(STATE, fresh()); loop(); } });
+
+  loop();
+})();
+</script>
+</body>
+</html>
